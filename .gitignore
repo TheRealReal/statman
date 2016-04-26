@@ -1,9 +1,9 @@
 .eunit
-deps
 priv
-ebin
 *.o
 *.beam
 *.plt
 *~
 *#
+_build
+rebar.lock

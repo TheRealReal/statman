@@ -2,7 +2,6 @@
 -include_lib("eunit/include/eunit.hrl").
 -compile([{parse_transform, decorators}]).
 
-
 -export([runtime/3, reductions/3, memory/3, call_rate/3]).
 
 %%
