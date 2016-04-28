@@ -155,7 +155,7 @@ benchmark() ->
     do_benchmark(32, 100000).
 
 do_benchmark(Processes, Writes) ->
-    Start = now(),
+    Start = os:timestamp(),
     Parent = self(),
     Pids = [spawn(fun() ->
                           benchmark_incrementer(foo, Writes),
@@ -163,7 +163,7 @@ do_benchmark(Processes, Writes) ->
                   end) || _ <- lists:seq(1, Processes)],
     receive_all(Pids, done),
     error_logger:info_msg("~p processes, ~p writes in ~p ms~n",
-                          [Processes, Writes, timer:now_diff(now(), Start) / 1000]),
+                          [Processes, Writes, timer:now_diff(os:timestamp(), Start) / 1000]),
     ok.
 
 receive_all([], _) ->
