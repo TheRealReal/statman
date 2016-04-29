@@ -8,5 +8,6 @@
                   stdlib
                  ]},
   {mod, {statman_app, []}},
-  {env, []}
+  {env, []},
+  {links, [{"GitHub", "https://github.com/knutin/statman"}]}
  ]}.
