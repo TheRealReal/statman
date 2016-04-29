@@ -6,6 +6,7 @@
 %% with the same key, but from different nodes are also merged.
 -module(statman_aggregator).
 -behaviour(gen_server).
+-compile({no_auto_import,[get_keys/0]}).
 
 -export([start_link/0,
          get_window/1,
